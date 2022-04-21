@@ -52,3 +52,20 @@ const contactsList = [
 ]
 
 // Your code goes here
+
+
+function loadContacts(contactList){
+  for (const contact of contactList){
+    console.log(contact)
+  }
+}
+
+function contactsName(contactList){
+  const nameList = []
+  for (const contact of contactList){
+    nameList.push(contact.name)
+  }
+  return nameList.sort()
+}
+
+console.log(contactsName(contactsList))
