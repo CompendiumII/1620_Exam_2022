@@ -82,6 +82,7 @@ function createNameCard(name){
 }
 function createSingleCard(singleName){
   const insertNav = document.querySelector('#display_single_contact')
+  clearAllContacts()
   const img = document.createElement('img')
   const head = document.createElement('h')
   img.src = 'img/' + singleName + '.png'
@@ -111,6 +112,10 @@ function addToAllContacts(nameList){
   }
 }
 
-addToAllContacts(contactsName(contactsList))
+function event(){
+  const button = document.querySelector('display_all_contacts')
+  const name = button.innerHTML
+  button.addEventListener('click', createSingleCard(name))
+}
 
 /*<img src="url" alt="alternatetext">*/
