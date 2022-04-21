@@ -81,13 +81,13 @@ function createNameCard(name){
   
 }
 function createSingleCard(singleName){
-  const selectNav = document.querySelectorAll('.nameCard')
   const insertNav = document.querySelector('#display_single_contact')
-  for (const card of selectNav){
-    if (card.innerHTML == singleName){
-      insertNav.insertAdjacentHTML(afterbegin, `<img src= img/${singleName}.png></img>`)
-    }
-  }
+  const img = document.createElement('img')
+  const head = document.createElement('h')
+  img.src = 'img/' + singleName + '.png'
+  insertNav.appendChild(img)
+  head.appendChild(document.createTextNode(singleName))
+  insertNav.appendChild(head)
 }
 
 function clearSingleContact(){
