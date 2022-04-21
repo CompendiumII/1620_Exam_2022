@@ -72,8 +72,37 @@ function createNameCard(name){
   const selectNav = document.querySelector('#display_all_contacts')
   const div = document.createElement('div')
   div.className = 'nameCard'
+  const imgURL = 'img/' + name + '.png'
+  const img = document.createElement('img')
+  img.src = imgURL
+  div.appendChild(img)
   div.appendChild(document.createTextNode(name))
   selectNav.appendChild(div)
+  
+}
+function createSingleCard(singleName){
+  const selectNav = document.querySelectorAll('.nameCard')
+  const insertNav = document.querySelector('#display_single_contact')
+  for (const card of selectNav){
+    if (card.innerHTML == singleName){
+      insertNav.insertAdjacentHTML(afterbegin, `<img src= img/${singleName}.png></img>`)
+    }
+  }
+}
+
+function clearSingleContact(){
+  const selectNav = document.querySelector('#display_single_contact')
+  selectNav.innerHTML = ''
+}
+
+function clearAllContacts(){
+  const selectNav = document.querySelector('#display_all_contacts')
+  selectNav.innerHTML = ''
+}
+
+function makeCardButton(){
+  const selectedCard = document.querySelector('display_all_contacts')
+  selectedCard.addEventListener('click', createSingleCard)
 }
 
 function addToAllContacts(nameList){
@@ -83,3 +112,5 @@ function addToAllContacts(nameList){
 }
 
 addToAllContacts(contactsName(contactsList))
+
+/*<img src="url" alt="alternatetext">*/

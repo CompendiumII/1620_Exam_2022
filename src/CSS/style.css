@@ -65,7 +65,8 @@ header a:hover {
   text-decoration: underline;
 }
 
-main {
+main{
+  flex-grow: 1;
 }
 
 #individual_contact {
@@ -103,6 +104,8 @@ main {
   flex-grow: 0;
   gap: 20px;
   padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #display_all_contacts div {
@@ -113,6 +116,7 @@ main {
   border-radius: 5px;
   padding: 10px;
   align-items: center;
+  flex-grow:1;
 }
 
 #display_all_contacts img {
