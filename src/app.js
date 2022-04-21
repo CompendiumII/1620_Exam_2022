@@ -68,4 +68,18 @@ function contactsName(contactList){
   return nameList.sort()
 }
 
-console.log(contactsName(contactsList))
+function createNameCard(name){
+  const selectNav = document.querySelector('#display_all_contacts')
+  const div = document.createElement('div')
+  div.className = 'nameCard'
+  div.appendChild(document.createTextNode(name))
+  selectNav.appendChild(div)
+}
+
+function addToAllContacts(nameList){
+  for (const name of nameList){
+    createNameCard(name)
+  }
+}
+
+addToAllContacts(contactsName(contactsList))
